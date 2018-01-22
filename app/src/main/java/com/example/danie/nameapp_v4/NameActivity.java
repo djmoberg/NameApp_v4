@@ -16,13 +16,10 @@ public class NameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_name);
 
 
-        ArrayList<String> names = new ArrayList<>();
-        for (String n:new String[]{"name1","name2","name3"}) {
-            names.add(n);
-        }
+        ArrayList<String> names = ((GlobalClass) this.getApplication()).getNames();
 
 
-        ArrayAdapter adapter = new ArrayAdapter<String>( this, R.layout.activity_name , names);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>( this, android.R.layout.simple_list_item_1 , names);
 
         ListView namesList = (ListView) findViewById(R.id.namesList);
         namesList.setAdapter(adapter);

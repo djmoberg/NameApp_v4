@@ -25,15 +25,7 @@ public class ShowPersonActivity extends AppCompatActivity {
 
         Uri uri = ((GlobalClass) this.getApplication()).getUri(name);
 
-        InputStream is = null;
-        try {
-            is = getApplicationContext().getContentResolver().openInputStream(uri);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        Bitmap bitmap = BitmapFactory.decodeStream(is);
-
         ImageView iv = (ImageView) findViewById(R.id.imageView);
-        iv.setImageBitmap(bitmap);
+        iv.setImageURI(uri);
     }
 }
