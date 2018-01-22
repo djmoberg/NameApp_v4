@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NameApp_v4</string>
+    <string name="choose_mode">Choose mode</string>
+    <string name="name">Name</string>
+    <string name="picture">Picture</string>
+    <string name="learning">Learning</string>
 </resources>
