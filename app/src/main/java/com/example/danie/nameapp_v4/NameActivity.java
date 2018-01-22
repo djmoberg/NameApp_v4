@@ -3,9 +3,12 @@ package com.example.danie.nameapp_v4;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,10 +34,29 @@ public class NameActivity extends AppCompatActivity {
             startActivity(intent);
                 });
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
-    public void onClickAddPerson(View v) {
-        startActivity(new Intent(this, AddPersonActivity.class));
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.name_menu, menu);
+        return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuAdd:
+                startActivity(new Intent(this, AddPersonActivity.class));
+                return true;
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }
