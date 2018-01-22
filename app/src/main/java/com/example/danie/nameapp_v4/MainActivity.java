@@ -30,5 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private void addDefaultNames() {
         ((GlobalClass) this.getApplication()).addName("Daniel", "android.resource://" + getClass().getPackage().getName() + "/drawable/daniel");
         ((GlobalClass) this.getApplication()).addName("Abdella", "android.resource://" + getClass().getPackage().getName() + "/drawable/abdella");
+        ((GlobalClass) this.getApplication()).addName("Oskar", "android.resource://" + getClass().getPackage().getName() + "/drawable/oskar");
     }
 }
