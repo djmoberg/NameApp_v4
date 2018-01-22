@@ -1,6 +1,5 @@
 package com.example.danie.nameapp_v4;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -27,12 +26,9 @@ public class NameActivity extends AppCompatActivity {
         ListView namesList = (ListView) findViewById(R.id.namesList);
         namesList.setAdapter(adapter);
 
-        namesList.setOnItemClickListener((adapterView , view , pos , id)->{
-            Intent intent = new Intent(NameActivity.this , ShowPersonActivity.class);
-            intent.putExtra("name", names.get(pos));
-            startActivity(intent);
-                });
-        
+        namesList.setOnItemClickListener(
+                
+        );
 
     }
 }
