@@ -12,6 +12,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAddPerson"
+            android:text="Add Person" />
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"

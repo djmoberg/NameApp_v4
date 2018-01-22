@@ -3,6 +3,7 @@ package com.example.danie.nameapp_v4;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -31,5 +32,9 @@ public class NameActivity extends AppCompatActivity {
                 });
 
 
+    }
+
+    public void onClickAddPerson(View v) {
+        startActivity(new Intent(this, AddPersonActivity.class));
     }
 }

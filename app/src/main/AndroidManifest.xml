@@ -20,7 +20,8 @@
         <activity android:name=".NameActivity" />
         <activity android:name=".PictureActivity" />
         <activity android:name=".LearningActivity" />
-        <activity android:name=".ShowPersonActivity"></activity>
+        <activity android:name=".ShowPersonActivity" />
+        <activity android:name=".AddPersonActivity"></activity>
     </application>
 
 </manifest>
