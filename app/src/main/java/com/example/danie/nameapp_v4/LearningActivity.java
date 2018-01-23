@@ -113,4 +113,10 @@ public class LearningActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(LearningActivity.this, "Final Score: " + String.valueOf(score), Toast.LENGTH_SHORT).show();
+    }
+
 }
