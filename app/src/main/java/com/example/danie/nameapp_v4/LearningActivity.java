@@ -1,10 +1,13 @@
 package com.example.danie.nameapp_v4;
 
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
-import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -53,35 +56,61 @@ public class LearningActivity extends AppCompatActivity {
 
         TextView learningScoreTxtView = (TextView) findViewById(R.id.learningScoreTxtView);
         learningScoreTxtView.setText(""+score);
-
     }
 
     public void checkAnswer(){
         EditText learningInputEditeTxt = (EditText) findViewById(R.id.learningInputEditeTxt);
         String answer = learningInputEditeTxt.getText().toString();
-        String msg = "<font color='#e3f2fd' ><b> Feil </b></font>";
 
+        boolean msg_code = false;
+        TextView learningScoreTxtView = (TextView) findViewById(R.id.learningScoreTxtView);
 
-        if(answer!=null && answer.equals(nameRND)){
+        if(answer!=null && answer.equalsIgnoreCase(nameRND)){
             score ++;
-            TextView learningScoreTxtView = (TextView) findViewById(R.id.learningScoreTxtView);
-            learningScoreTxtView.setText(""+score);
-            msg="rett!";
+            msg_code = true;
+        }else{
+            score --;
+            msg_code = false;
         }
 
-        Toast toast = Toast.makeText(this, Html.fromHtml("<font color='#e3f2fd' ><b> Feil </b></font>"), Toast.LENGTH_SHORT);
-        toast.show();
-
+        showMsg(msg_code);
         restAllFields();
-
     }
 
     public int uniqueRand(int oldRand){
         int newRand = ThreadLocalRandom.current().nextInt(0,nameArray.size());
-        System.out.println(newRand + "    " +oldRand);
         if (newRand == oldRand)
             newRand = uniqueRand(oldRand);
         return newRand;
+    }
+
+    public void showMsg(boolean msg_code){
+        String msg="";
+        Drawable d;
+        if (msg_code){
+            msg="Right!";
+            d = getResources().getDrawable(R.drawable.right);
+
+        }else{
+            msg="Wrong!";
+            d = getResources().getDrawable(R.drawable.wrong);
+        }
+
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_container));
+
+        TextView text = (TextView) layout.findViewById(R.id.text);
+        text.setText(msg);
+
+        ImageView imgvw = (ImageView) layout.findViewById(R.id.toastIcon);
+        imgvw.setImageDrawable(d);
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+
     }
 
 }
