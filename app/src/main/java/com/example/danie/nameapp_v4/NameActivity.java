@@ -1,6 +1,7 @@
 package com.example.danie.nameapp_v4;
 
 import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -51,7 +52,7 @@ public class NameActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AddPersonActivity.class));
                 return true;
             case android.R.id.home:
-                this.finish();
+                NavUtils.navigateUpFromSameTask(this);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
