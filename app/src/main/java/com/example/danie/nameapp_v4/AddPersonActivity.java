@@ -1,6 +1,5 @@
 package com.example.danie.nameapp_v4;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
@@ -63,18 +62,8 @@ public class AddPersonActivity extends AppCompatActivity {
         builder.setTitle("Cancel");
         builder.setMessage("Are you sure?");
         builder.setPositiveButton("Confirm",
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                });
-        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(AddPersonActivity.this, "Canceled the cancel", Toast.LENGTH_SHORT).show();
-            }
-        });
+                (dialog, which) -> finish());
+        builder.setNegativeButton(android.R.string.cancel, (dialog, which) -> Toast.makeText(AddPersonActivity.this, "Canceled the cancel", Toast.LENGTH_SHORT).show());
 
         AlertDialog dialog = builder.create();
         dialog.show();

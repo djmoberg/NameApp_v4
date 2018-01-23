@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:gravity="center"
-            android:text="TextView" />
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
         <ImageView
             android:id="@+id/imageView"

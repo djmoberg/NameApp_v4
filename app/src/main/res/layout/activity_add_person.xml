@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name:" />
+            android:text="@string/enterName" />
 
         <EditText
             android:id="@+id/editText2"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onClickAddPicture"
-            android:text="Add Picture" />
+            android:text="@string/add_picture" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickSave"
-                android:text="Save" />
+                android:text="@string/save" />
 
             <Button
                 android:id="@+id/button8"
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickCancel"
-                android:text="Cancel" />
+                android:text="@string/cancel" />
         </LinearLayout>
     </LinearLayout>
 

@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Select name to view Person"
+            android:text="@string/select_name_to_view_person"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
             app:layout_constraintBottom_toTopOf="@+id/namesList"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/namesList" />

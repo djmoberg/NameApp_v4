@@ -29,8 +29,9 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select picture to view Person"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:text="@string/select_picture_to_view_person"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
         </LinearLayout>
 
     </ScrollView>

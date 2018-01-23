@@ -20,7 +20,7 @@
         <activity android:name=".NameActivity" android:parentActivityName=".MainActivity" />
         <activity android:name=".PictureActivity" android:parentActivityName=".MainActivity" />
         <activity android:name=".LearningActivity" android:parentActivityName=".MainActivity" />
-        <activity android:name=".ShowPersonActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ShowPersonActivity" />
         <activity android:name=".AddPersonActivity" android:parentActivityName=".NameActivity">
 
         </activity>
