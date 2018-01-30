@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewAnimator;
 
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
@@ -41,6 +42,9 @@ public class LearningActivity extends AppCompatActivity {
             checkAnswer();
         });
 
+        ViewAnimator va = (ViewAnimator) findViewById(R.id.viewAnimator);
+        va.setInAnimation(this, android.R.anim.slide_in_left);
+
     }
 
     public void restAllFields(){
@@ -48,8 +52,13 @@ public class LearningActivity extends AppCompatActivity {
         nameRND = nameArray.get(rand);
         uriRND = ((GlobalClass) getApplication()).getUri(nameRND);
 
-        ImageView learningImageView = (ImageView) findViewById(R.id.learningImageView);
+        ImageView learningImageView = new ImageView(this);
         learningImageView.setImageURI(uriRND);
+
+        ViewAnimator va = (ViewAnimator) findViewById(R.id.viewAnimator);
+        va.removeAllViews();
+        va.addView(learningImageView);
+        va.showNext();
 
         EditText learningInputEditeTxt = (EditText) findViewById(R.id.learningInputEditeTxt);
         learningInputEditeTxt.setText("");
