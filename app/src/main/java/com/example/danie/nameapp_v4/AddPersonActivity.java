@@ -48,7 +48,7 @@ public class AddPersonActivity extends AppCompatActivity {
     public void onClickSave(View v) {
         EditText et = (EditText) findViewById(R.id.editText2);
 
-        if (!et.getText().toString().equals("") ) {
+        if (!et.getText().toString().equals("") && selectedImageUri != null) {
             ((GlobalClass) this.getApplication()).addNameUri(et.getText().toString(), selectedImageUri);
 
             Toast.makeText(AddPersonActivity.this, "Saved", Toast.LENGTH_SHORT).show();
