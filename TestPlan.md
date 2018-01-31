@@ -3,10 +3,15 @@ Test plan for the NameApp_v4 application
 
 # Test 1
 Description: Launch the LearningActivity without going through the main activity
+
 Where: LearningActivity
+
 Type: activity
+
 Pre-conditions: none
+
 Expected result: The LearningActivity launches successfuly
+
 
 # Test 2
 Description:
