@@ -46,7 +46,7 @@ public class SimpleUserPrefsFragment extends PreferenceFragment {
                 Uri selectedImage = imageReturnedIntent.getData();
                 Context c = getActivity().getApplicationContext();
                 try {
-                    FileOutputStream fos = c.openFileOutput("ownerPicture", c.MODE_PRIVATE);
+                    FileOutputStream fos = c.openFileOutput("ownerPicture", c.MODE_PRIVATE); //lager et bilde med navn "ownerPicture"
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(c.getContentResolver(), selectedImage);
 
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);

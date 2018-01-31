@@ -46,17 +46,39 @@ public class RegisterOwnerActivity extends AppCompatActivity {
         TextView tv = findViewById(R.id.textView8);
         tv.setText(ownerName);
 
-        setPicture();
+
+
+
+                setPicture();
+
+
     }
 
-    private void setPicture() {
+    private void setPicture() { // throws RuntimeException,InterruptedException
         ImageView iv = findViewById(R.id.imageView2);
 
-        try {
-            FileInputStream fis = openFileInput("ownerPicture");
-            iv.setImageBitmap(BitmapFactory.decodeStream(fis));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+
+
+        new Thread(new Runnable() {
+            public void run() {
+
+                iv.post(new Runnable() {
+                    public void run() {
+                        FileInputStream fis = null;
+                        try {
+                            fis = openFileInput("ownerPicture");
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                        iv.setImageBitmap(BitmapFactory.decodeStream(fis));
+
+                    }
+                });
+            }
+        }).start();
+
+
+
+
     }
 }
