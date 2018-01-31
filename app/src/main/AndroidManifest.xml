@@ -17,13 +17,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NameActivity" android:parentActivityName=".MainActivity" />
-        <activity android:name=".PictureActivity" android:parentActivityName=".MainActivity" />
-        <activity android:name=".LearningActivity" android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".NameActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PictureActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LearningActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".ShowPersonActivity" />
-        <activity android:name=".AddPersonActivity" android:parentActivityName=".NameActivity">
-
-        </activity>
+        <activity
+            android:name=".AddPersonActivity"
+            android:parentActivityName=".NameActivity"></activity>
+        <activity android:name=".RegisterOwnerActivity"></activity>
     </application>
 
 </manifest>
