@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,12 +19,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         addDefaultNames();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String ownerName = sharedPref.getString("owner_name", "Default");
 
         if (ownerName.equals("Default")) {
             startActivity(new Intent(this, RegisterOwnerActivity.class));
+            Toast.makeText(MainActivity.this, "No owner is set", Toast.LENGTH_SHORT).show();
         }
     }
 

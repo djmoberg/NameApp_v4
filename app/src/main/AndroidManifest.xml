@@ -29,8 +29,12 @@
         <activity android:name=".ShowPersonActivity" />
         <activity
             android:name=".AddPersonActivity"
-            android:parentActivityName=".NameActivity"></activity>
-        <activity android:name=".RegisterOwnerActivity"></activity>
+            android:parentActivityName=".NameActivity" />
+        <activity
+            android:name=".RegisterOwnerActivity"
+            android:parentActivityName=".MainActivity" />
+
+
     </application>
 
 </manifest>
