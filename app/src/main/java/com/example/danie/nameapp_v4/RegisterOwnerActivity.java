@@ -30,6 +30,7 @@ public class RegisterOwnerActivity extends AppCompatActivity {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPref.registerOnSharedPreferenceChangeListener(listener);
         setValues();
+        setPicture();
     }
 
     @Override
@@ -45,13 +46,6 @@ public class RegisterOwnerActivity extends AppCompatActivity {
 
         TextView tv = findViewById(R.id.textView8);
         tv.setText(ownerName);
-
-
-
-
-                setPicture();
-
-
     }
 
     private void setPicture() { // throws RuntimeException,InterruptedException

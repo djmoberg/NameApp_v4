@@ -1,6 +1,10 @@
 package com.example.danie.nameapp_v4;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.test.rule.ActivityTestRule;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import org.junit.*;
 
@@ -23,5 +27,13 @@ public class LearningActivityTest {
     public void testCase1() {
         onView(withId(R.id.learningInputEditeTxt)).perform(typeText("entotre"));
         onView(withId(R.id.learningInputEditeTxt)).check(matches(withText("entotre")));
+    }
+
+
+    @Test
+    public void testCase2() {
+        onView(withId(R.id.learningCheckButton)).perform(click());
+        onView(withId(R.id.learningScoreTxtView)).check(matches(withText("-1")));
+
     }
 }
