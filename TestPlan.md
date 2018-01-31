@@ -14,29 +14,49 @@ Expected result: The LearningActivity launches successfuly
 
 
 # Test 2
-Description:
-Where:
-Type:
-Pre-conditions:
-Expected result:
+Description: Score gets updated on success or failure
+
+Where: Learning activity
+
+Type: 
+
+Pre-conditions: none
+
+Expected result: Score gets updated 
+
 
 # Test 3
-Description:
-Where:
-Type:
-Pre-conditions:
-Expected result:
+Description: RegisterOwnerActivity gets launched when main activity gets launched and there are no set owner
+
+Where: RegisterOwnerActivity/MainActivity
+
+Type: activity
+
+Pre-conditions: no preferences set
+
+Expected result: RegisterOwnerActivity gets launched
+
 
 # Test 4
-Description:
-Where:
-Type:
-Pre-conditions:
-Expected result:
+Description: When a person gets added in the AddPersonActivity, the listView in NameActivity gets updated
+
+Where: NameActivity/AddPersonActivity
+
+Type: UI
+
+Pre-conditions: none
+
+Expected result: A new person gets added to the listView
+
 
 # Test 5
 Description:
+
 Where:
+
 Type:
+
 Pre-conditions:
+
 Expected result:
+
