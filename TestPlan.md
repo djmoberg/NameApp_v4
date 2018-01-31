@@ -12,6 +12,8 @@ Pre-conditions: none
 
 Expected result: The LearningActivity launches successfuly
 
+File: LearningActivityTest.java
+
 
 ## Test 2
 Description: Score gets updated on success or failure
@@ -24,6 +26,7 @@ Pre-conditions: none
 
 Expected result: Score gets updated 
 
+File: LearningActivityTest.java
 
 ## Test 3
 Description: RegisterOwnerActivity gets launched when main activity gets launched and there are no set owner
@@ -36,6 +39,7 @@ Pre-conditions: no preferences set
 
 Expected result: RegisterOwnerActivity gets launched
 
+File: MainActivityTest.java
 
 ## Test 4
 Description: When a person gets added in the AddPersonActivity, the listView in NameActivity gets updated
@@ -48,6 +52,7 @@ Pre-conditions: none
 
 Expected result: A new person gets added to the listView
 
+File: NameActivityTest.java
 
 ## Test 5
 Description: When a picture in PictureActivity is clicked, the correct name is displayed
@@ -60,6 +65,7 @@ Pre-conditions: none
 
 Expected result: Correct name is displayed
 
+File: PictureActivityTest.java
 
 ## Test 6
 Description: When a name in NameActivity is clicked, the correct person is displayed
@@ -71,3 +77,5 @@ Type: UI
 Pre-conditions: none
 
 Expected result: Correct person is displayed
+
+File: NameActivityTest.java
