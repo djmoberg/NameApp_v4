@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,6 +16,9 @@ public class AddPersonActivity extends AppCompatActivity {
     private static final int SELECT_PICTURE = 1;
     private Uri selectedImageUri;
 
+    public void setSelectedImageUri(Uri u){
+        selectedImageUri = u;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +48,7 @@ public class AddPersonActivity extends AppCompatActivity {
     public void onClickSave(View v) {
         EditText et = (EditText) findViewById(R.id.editText2);
 
-        if (!et.getText().toString().equals("") && selectedImageUri != null) {
+        if (!et.getText().toString().equals("") ) {
             ((GlobalClass) this.getApplication()).addNameUri(et.getText().toString(), selectedImageUri);
 
             Toast.makeText(AddPersonActivity.this, "Saved", Toast.LENGTH_SHORT).show();
