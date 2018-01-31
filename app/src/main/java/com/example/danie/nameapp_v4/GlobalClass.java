@@ -15,6 +15,13 @@ import java.util.Set;
 public class GlobalClass extends Application{
     private HashMap<String, Uri> names = new HashMap<>();
 
+    public GlobalClass() {
+        super();
+
+        addName("Daniel", "android.resource://" + getClass().getPackage().getName() + "/drawable/daniel");
+        addName("Abdella", "android.resource://" + getClass().getPackage().getName() + "/drawable/abdella");
+    }
+
     public ArrayList<String> getNames() {
         ArrayList<String> nameArray = new ArrayList<>();
         Set set = names.entrySet();
