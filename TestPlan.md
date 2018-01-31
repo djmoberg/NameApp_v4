@@ -60,3 +60,14 @@ Pre-conditions: none
 
 Expected result: Correct name is displayed
 
+
+## Test 6
+Description: When a name in NameActivity is clicked, the correct person is displayed
+
+Where: NameActivity/ShowPersonActivity
+
+Type: UI
+
+Pre-conditions: none
+
+Expected result: Correct person is displayed
