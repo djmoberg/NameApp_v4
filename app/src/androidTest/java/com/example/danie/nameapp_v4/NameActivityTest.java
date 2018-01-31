@@ -7,6 +7,7 @@ import android.util.Log;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
@@ -15,6 +16,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.Matchers.hasToString;
+import static org.hamcrest.core.StringStartsWith.startsWith;
 
 /**
  * Created by daniel on 31.01.18.
@@ -39,5 +42,12 @@ public class NameActivityTest {
 
         onView(withId(R.id.namesList))
                 .check(matches(hasDescendant(withText("test_name"))));
+    }
+
+    @Test
+    public void testCase6() {
+        onData(hasToString(startsWith("Daniel"))).inAdapterView(withId(R.id.namesList)).atPosition(0).perform(click());
+
+        onView(withId(R.id.textView2)).check(matches(withText("Daniel")));
     }
 }
