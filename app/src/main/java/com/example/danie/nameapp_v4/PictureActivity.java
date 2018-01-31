@@ -31,6 +31,7 @@ public class PictureActivity extends AppCompatActivity {
         for (int i = 0; i < names.size(); i++) {
             ImageView imageView = new ImageView(this);
             imageView.setLayoutParams(new LinearLayout.LayoutParams(600, 600));
+            imageView.setId(i);
 
             Uri uri = ((GlobalClass) this.getApplication()).getUri(names.get(i));
 
