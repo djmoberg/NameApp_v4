@@ -50,13 +50,13 @@ Expected result: A new person gets added to the listView
 
 
 ## Test 5
-Description:
+Description: When a picture in PictureActivity is clicked, the correct name is displayed
 
-Where:
+Where: PictureActivity/ShowPersonActivity
 
-Type:
+Type: UI
 
-Pre-conditions:
+Pre-conditions: none
 
-Expected result:
+Expected result: Correct name is displayed
 
