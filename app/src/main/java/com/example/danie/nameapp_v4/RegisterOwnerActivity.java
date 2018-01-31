@@ -67,8 +67,10 @@ public class RegisterOwnerActivity extends AppCompatActivity {
                         FileInputStream fis = null;
                         try {
                             fis = openFileInput("ownerPicture");
+
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
+
                         }
                         iv.setImageBitmap(BitmapFactory.decodeStream(fis));
 
