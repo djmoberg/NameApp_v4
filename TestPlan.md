@@ -20,7 +20,7 @@ Description: Score gets updated on success or failure
 
 Where: Learning activity
 
-Type: 
+Type: UI
 
 Pre-conditions: none
 
