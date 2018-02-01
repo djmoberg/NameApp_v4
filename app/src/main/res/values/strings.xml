@@ -10,4 +10,5 @@
     <string name="cancel">Cancel</string>
     <string name="select_name_to_view_person">Select name to view Person</string>
     <string name="select_picture_to_view_person">Select picture to view Person</string>
+    <string name="No_owner_name_is_set">No owner name is set</string>
 </resources>

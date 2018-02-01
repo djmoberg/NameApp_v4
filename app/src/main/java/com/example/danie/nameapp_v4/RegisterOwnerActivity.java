@@ -48,7 +48,7 @@ public class RegisterOwnerActivity extends AppCompatActivity {
         TextView tv = findViewById(R.id.textView8);
 
         if (ownerName.equals("Default")) {
-            tv.setText("No owner name is set");
+            tv.setText(R.string.No_owner_name_is_set);
         } else {
             tv.setText(ownerName);
         }
@@ -57,31 +57,15 @@ public class RegisterOwnerActivity extends AppCompatActivity {
     private void setPicture() { // throws RuntimeException,InterruptedException
         ImageView iv = findViewById(R.id.imageView2);
 
-
-
-        new Thread(new Runnable() {
-            public void run() {
-
-                iv.post(new Runnable() {
-                    public void run() {
-                        FileInputStream fis = null;
-                        try {
-                            fis = openFileInput("ownerPicture");
-
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
-
-                        }
-                        iv.setImageBitmap(BitmapFactory.decodeStream(fis));
-
-                    }
-                });
+        new Thread(() -> iv.post(() -> {
+            FileInputStream fis;
+            try {
+                fis = openFileInput("ownerPicture");
+                iv.setImageBitmap(BitmapFactory.decodeStream(fis));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
             }
-        }).start();
-
-
-
-
+        })).start();
     }
 
     public void onClickDone(View v) {
