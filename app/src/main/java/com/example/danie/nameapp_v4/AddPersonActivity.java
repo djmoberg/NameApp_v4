@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,6 +16,9 @@ public class AddPersonActivity extends AppCompatActivity {
     private static final int SELECT_PICTURE = 1;
     private Uri selectedImageUri;
 
+    public void setSelectedImageUri(Uri u){
+        selectedImageUri = u;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +31,7 @@ public class AddPersonActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURE);
+        startActivityForResult(intent, SELECT_PICTURE);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
