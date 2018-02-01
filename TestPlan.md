@@ -10,7 +10,7 @@ Type: activity
 
 Pre-conditions: none
 
-Expected result: The LearningActivity launches successfuly
+Expected result: The LearningActivity launches successfully
 
 File: LearningActivityTest.java
 
@@ -29,7 +29,7 @@ Expected result: Score gets updated
 File: LearningActivityTest.java
 
 ## Test 3
-Description: RegisterOwnerActivity gets launched when main activity gets launched and there are no set owner
+Description: RegisterOwnerActivity gets launched when main activity gets launched and there is no set owner
 
 Where: RegisterOwnerActivity/MainActivity
 
@@ -79,3 +79,6 @@ Pre-conditions: none
 Expected result: Correct person is displayed
 
 File: NameActivityTest.java
+
+## Summary
+To run the tests, run the androidTest package from Android Studio. The result should be that all 7 tests passes. We discovered one bug while running the tests. On Test 1, when we tried to launch the LearningActivity without going through the MainActivity, the app crashed. This was because the default data was set in the MainActivity and when we launched the LearningActivity directly, no data was set. We fixed this by setting the default data in the GlobalClass instead.  
